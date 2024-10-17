@@ -1,0 +1,39 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple API that has basic CRUD operations (Create, Read, Update, and Delete) for managing a todo list.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch src --watch prisma --ext ts,js,json --exec \"ts-node src/index.ts\"",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Elyson Sarmento",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.6",
+    "nodemon": "^3.1.7",
+    "prisma": "^5.21.0",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "pg": "^8.13.0"
+  },
+  "prisma": {
+    "schema": "src/database/prisma/schema.prisma"
+  },
+  "nodemonConfig": {
+    "legacyWatch": true,
+    "watch": ["src", "prisma"],
+    "ext": "ts,js,json"
+  }
+}
